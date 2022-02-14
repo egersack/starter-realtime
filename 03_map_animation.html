@@ -33,8 +33,8 @@
 </div>
  
 <script>
-  // api token
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic29mdGV4cGVyaW1lbnQiLCJhIjoiY2tjMngyZm9rMDFvajJzczJ3aWo0bnh6aiJ9.Bc_qK9Xf8SFBXkFM_x2gpg';
+  // api token 
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZWdlcnNhY2siLCJhIjoiY2t6Zm5xcWRmM2puYjJvcDRhdWkxZ3AwcSJ9.U7_QFW3y2Cz5kbU-CHLWIA';
 
   // map instance
   var map = new mapboxgl.Map({
@@ -66,13 +66,17 @@
 
   // animate marker
   let counter = 0;
-  function move(){
 
-    // ---------------
-    //    Your Code   
-    // ---------------
-    
-  }
+  var walker = function(){
+      if(counter >= busStops.length) return;
+      marker.setLngLat(busStops[counter]);
+      counter++;
+      move();
+    }
+
+  function move(){
+    setTimeout(Walker, 1000)
+   }
 
 </script>
  
