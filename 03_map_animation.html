@@ -65,20 +65,17 @@
   ];
 
   // animate marker
-  let counter = 0;
+var counter = 0;
+function move(){
+  setTimeout(() =>{
+    if (counter >= busStops.length) return;
+    marker.setLngLat(busStops[counter]);
+    counter++;
+    move();
+  }, 1000);
+}
 
-  var walker = function(){
-      if(counter >= busStops.length) return;
-      marker.setLngLat(busStops[counter]);
-      counter++;
-      move();
-    }
 
-  function move(){
-    setTimeout(Walker, 1000)
-   }
-
-</script>
- 
+</script> 
 </body>
 </html>
